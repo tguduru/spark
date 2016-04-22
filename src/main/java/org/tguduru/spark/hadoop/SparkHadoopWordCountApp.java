@@ -29,14 +29,18 @@ public class SparkHadoopWordCountApp {
         final SparkConf sparkConf = new SparkConf().setAppName("SparkHadoop").setMaster("spark://M1320945:7077");
         final JavaSparkContext javaSparkContext = new JavaSparkContext(sparkConf);
         // needs to append HDFS root path as user inputs only the file relative path.
-        final JavaRDD<String> stringJavaRDD = javaSparkContext.textFile(hdfsRoot + inputPath);
+        //reads the files from hadoop
+        final JavaRDD<String> lines = javaSparkContext.textFile(hdfsRoot + inputPath);
 
-        final JavaRDD<String> words = stringJavaRDD.flatMap(new FlatMapFunction<String, String>() {
+        //transformations
+        //produce a flatMap with words in a given line
+        final JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
             @Override
-            public Iterable<String> call(final String s) throws Exception {
-                return Arrays.asList(s.split(" "));
+            public Iterable<String> call(final String line) throws Exception {
+                return Arrays.asList(line.split(" "));
             }
         });
+        //transformations
         System.out.println("***  Read Words ****");
         final JavaPairRDD<String, Integer> pairs = words.mapToPair(new PairFunction<String, String, Integer>() {
             @Override
@@ -45,6 +49,7 @@ public class SparkHadoopWordCountApp {
             }
         });
         System.out.println("*** Pairs computed ****");
+        //action
         final JavaPairRDD<String, Integer> counts = pairs.reduceByKey(new Function2<Integer, Integer, Integer>() {
             @Override
             public Integer call(final Integer integer1, final Integer integer2) throws Exception {
@@ -52,6 +57,7 @@ public class SparkHadoopWordCountApp {
             }
         });
         System.out.println("*** Total Output Records - " + counts.count());
+        //action
         counts.saveAsTextFile(hdfsRoot + outputPath);
     }
 }
