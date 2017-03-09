@@ -1,0 +1,4 @@
+This is a sample file to compute the word count using spark in local mode.
+It is going to be a very simple spark application to compute word count compared to hadoop map reduce.
+This will also compute the word count with minimal coding effort.
+

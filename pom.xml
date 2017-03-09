@@ -12,22 +12,23 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spark.version>2.1.0</spark.version>
     </properties>
 
     <dependencies>
         <!-- compile dependencies-->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.10</artifactId>
-            <version>1.5.2</version>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>${spark.version}</version>
             <scope>compile</scope>
         </dependency>
 
         <!-- dependency for doing stream processing -->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming_2.10</artifactId>
-            <version>1.5.1</version>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <!-- test dependencies -->
         <dependency>
