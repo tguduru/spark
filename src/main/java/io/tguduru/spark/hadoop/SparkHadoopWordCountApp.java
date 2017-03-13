@@ -1,4 +1,4 @@
-package org.tguduru.spark.hadoop;
+package io.tguduru.spark.hadoop;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;

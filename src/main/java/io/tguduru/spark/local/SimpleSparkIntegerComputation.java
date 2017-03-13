@@ -1,4 +1,4 @@
-package org.tguduru.spark.local;
+package io.tguduru.spark.local;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Simple standalone Spark application.
+ *
  * @author Guduru, Thirupathi Reddy.
  */
 public class SimpleSparkIntegerComputation {

@@ -1,4 +1,4 @@
-package org.tguduru.spark.local;
+package io.tguduru.spark.local;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -6,7 +6,6 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.VoidFunction;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.List;
 import scala.Tuple2;
 
 /**
- * A sample application to count the words which reads a file from a local file system and execute it.
+ * A changed application to count the words which reads a file from a local file system and execute it.
  * @author Guduru, Thirupathi Reddy
  */
 public class SparkWordCount {

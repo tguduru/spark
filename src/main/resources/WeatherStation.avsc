@@ -1,0 +1,25 @@
+{"namespace": "io.tguduru.spark.ncdc.model",
+	"type": "record",
+	"name": "WeatherStation",
+	"fields": [
+		{"name": "region", "type": "string"},
+		{"name": "code", "type": "string"},
+		{"name": "name", "type": "string"},
+		{"name": "state", "type": ["string","null"]},
+		{"name": "county", "type": ["string","null"]},
+		{"name": "country", "type": ["string","null"]},
+		{"name": "extendedName", "type": ["string","null"]},
+		{"name": "callSign", "type": ["string","null"]},
+		{"name": "stationType", "type": ["string","null"]},
+		{"name": "assignedDate", "type": ["string","null"]},
+		{"name": "stateDate", "type": ["string","null"]},
+		{"name": "comments", "type": ["string","null"]},
+		{"name": "geoLocation", "type": ["string","null"]},
+		{"name": "otherElevation", "type": ["string","null"]},
+		{"name": "groundElevation", "type": ["string","null"]},
+		{"name": "runwayElevation", "type": ["string","null"]},
+		{"name": "barometricElevation", "type": ["string","null"]},
+		{"name": "stationElevation", "type": ["string","null"]},
+		{"name": "upperAirElevation", "type": ["string","null"]}
+	]
+}
